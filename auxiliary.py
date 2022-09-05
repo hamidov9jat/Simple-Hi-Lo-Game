@@ -1,5 +1,5 @@
 from game_data import data
-from art import vs_logo
+from art import vs_logo, hi_lo
 import random
 
 
@@ -34,8 +34,9 @@ def check_answer(guess, a_follower_count, b_follower_count):
 
 
 def run_game():
-    print(vs_logo)
+    print(f'{hi_lo}\n')
     score = 0
+    # Use of flag for while loop
     game_should_continue = True
 
     # Initialize account_b first to pass it to account_a in
@@ -58,7 +59,7 @@ def run_game():
         is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
         clear()
-        print(vs_logo)
+        print(hi_lo)
         if is_correct:
             score += 1
             print(f"You're right! Current score: {score}.")
